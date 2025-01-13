@@ -158,8 +158,8 @@ sudo apt-get install -y curl unzip
      ```bash
      cp planets/earth.jpeg planets/inhabited/
      cp planets/mars.jpeg planets/inhabited/
-     cp planets/tatooine.jpeg planets/inhabited/
-     cp planets/pandora.jpeg planets/inhabited/
+     cp planets/arrakis.jpeg planets/inhabited/
+     cp planets/cybertron.jpeg planets/inhabited/
      ```
 
 3. **Supprimez Pluton et son répertoire parent** :
