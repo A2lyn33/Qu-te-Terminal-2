@@ -65,7 +65,16 @@
    sudo apt-get install -y p7zip-full
    7z x planets.zip
    ```
+3. **Vérification manuelle dans un navigateur** (Optionnel)
+Si le problème persiste, téléchargez l'archive directement depuis votre navigateur :
 
+   Ouvrez ce lien dans un navigateur : [Planets.zip](https://github.com/WildCodeSchool/quests-resources/raw/master/terminal/planets.zip).<br>
+   Téléchargez le fichier et placez-le dans ~/quests/shell.<br>
+   Reprenez la décompression dans le terminal :
+   ```bash
+   cd ~/quests/shell
+   unzip planets.zip
+   ```
 ---
 
 # 💪 Challenge : Organisation des planètes avec le terminal
