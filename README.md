@@ -1,5 +1,190 @@
-### ⚠️ Vérifications avant de commencer
+# 💪 Challenge : Organisation des planètes avec le terminal
+_j'ai utilisé **Git bash**_ <br>
+Quelques solutions si problème avec le fichier à dézipper. [bas de page](https://github.com/A2lyn33/Qu-te-Terminal-2/edit/main/README.md#%EF%B8%8F-v%C3%A9rifications-si-unzip-ne-fonctionne-pas)
 
+
+---
+
+## 🛠️ Prérequis : Installer les outils nécessaires
+
+Vous aurez besoin de deux outils en ligne de commande :
+- **curl** : pour télécharger un fichier.
+- **unzip** : pour décompresser une archive `.zip`.
+
+### Installation de curl et unzip
+
+#### Sous Linux
+Exécutez cette commande pour installer curl et unzip :
+```bash
+sudo apt-get install -y curl unzip
+```
+
+---
+
+## 📥 Étape 1 : Télécharger et décompresser le fichier planets.zip
+
+1. **Naviguez dans le répertoire cible** :
+   ```bash
+   mkdir -p ~/quests/shell && cd ~/quests/shell
+   ```
+
+2. **Téléchargez l'archive** :
+   ```bash
+   curl --ssl-no-revoke -L -o planets.zip "https://github.com/WildCodeSchool/quests-resources/blob/master/terminal/planets.zip?raw=true"
+   ```
+
+3. **Décompressez l'archive** :
+   ```bash
+   unzip planets.zip
+   ```
+---
+
+## 🌌 Étape 2 : Organisation des planètes
+
+1. **Créez les répertoires nécessaires** :
+
+   - Répertoires principaux :
+     ```bash
+     mkdir -p planets/real planets/fictional planets/inhabited
+     ```
+
+   - Sous-répertoires pour les planètes réelles :
+     ```bash
+     mkdir -p planets/real/terrestrial planets/real/gas-giants planets/real/dwarf-planets
+     ```
+
+2. **Classez les planètes** :
+
+   - **Déplacez les planètes réelles** :
+     ```bash
+     mv planets/earth.jpeg planets/real/terrestrial/
+     mv planets/mars.jpeg planets/real/terrestrial/
+     mv planets/venus.jpeg planets/real/terrestrial/
+     mv planets/jupiter.jpeg planets/real/gas-giants/
+     mv planets/saturn.jpeg planets/real/gas-giants/
+     mv planets/uranus.jpeg planets/real/gas-giants/
+     mv planets/neptune.jpeg planets/real/gas-giants/
+     mv planets/mercury.jpeg planets/real/terrestrial/
+     mv planets/pluto.jpeg planets/real/dwarf-planets/
+     ```
+
+   - **Déplacez les planètes fictives** :
+     ```bash
+     mv planets/arrakis.jpeg planets/fictional/
+     mv planets/cybertron.jpeg planets/fictional/
+     mv planets/coruscant.jpeg planets/fictional/
+     ```
+
+   - **Copiez les planètes habitées** :
+     ```bash
+      cp planets/real/terrestrial/earth.jpeg planets/inhabited/
+      cp planets/real/terrestrial/mars.jpeg planets/inhabited/
+      cp planets/fictional/arrakis.jpeg planets/inhabited/
+      cp planets/fictional/cybertron.jpeg planets/inhabited/
+     ```
+
+3. **Supprimez Pluton et son répertoire parent** :
+   ```bash
+   rm -rf planets/real/dwarf-planets/
+   ```
+
+---
+
+## 🔍 Étape 3 : Vérification du résultat
+
+1. **Listez l’organisation des fichiers** :
+   ```bash
+   find planets/
+   ```
+
+2. **Affichez l’historique des commandes** :
+   ```bash
+   history
+   ```
+
+---
+
+## 🧹 Étape 4 : Nettoyage
+
+Après validation, supprimez le répertoire utilisé :
+```bash
+rm -rf ~/quests/shell
+```
+
+---
+
+## ✅ Critères de réussite
+
+- Les planètes sont correctement classées :
+  - **Planètes réelles** : dans `planets/real` et ses sous-dossiers.
+  - **Planètes fictives** : dans `planets/fictional`.
+  - **Planètes habitées** : copiées dans `planets/inhabited`.
+- Pluton et son répertoire parent sont supprimés.
+- Vous avez uniquement utilisé le terminal.
+
+---
+
+🎉 **Bravo, vous avez terminé le challenge !**
+---
+---
+# Résultat
+```bash
+PC@A**** ~/quests/shell
+$ find planets/
+   planets/
+   planets/fictional
+   planets/fictional/arrakis.jpeg
+   planets/fictional/coruscant.jpeg
+   planets/fictional/cybertron.jpeg
+   planets/inhabited
+   planets/inhabited/arrakis.jpeg
+   planets/inhabited/cybertron.jpeg
+   planets/inhabited/earth.jpeg
+   planets/inhabited/mars.jpeg
+   planets/real
+   planets/real/gas-giants
+   planets/real/gas-giants/jupiter.jpeg
+   planets/real/gas-giants/neptune.jpeg
+   planets/real/gas-giants/saturn.jpeg
+   planets/real/gas-giants/uranus.jpeg
+   planets/real/terrestrial
+   planets/real/terrestrial/earth.jpeg
+   planets/real/terrestrial/mars.jpeg
+   planets/real/terrestrial/mercury.jpeg
+   planets/real/terrestrial/venus.jpeg
+```
+--- 
+
+```bash
+PC@A**** ~/quests/shell
+$ history
+    mkdir -p ~/quests/shell && cd ~/quests/shell
+    curl --ssl-no-revoke -L -o planets.zip "https://github.com/WildCodeSchool/quests-resources/blob/master/terminal/planets.zip?raw=true"
+    unzip planets.zip
+    mkdir -p planets/real planets/fictional planets/inhabited
+    mkdir -p planets/real/terrestrial planets/real/gas-giants planets/real/dwarf-planets
+    mv planets/earth.jpeg planets/real/terrestrial/
+    mv planets/mars.jpeg planets/real/terrestrial/
+    mv planets/venus.jpeg planets/real/terrestrial/
+    mv planets/jupiter.jpeg planets/real/gas-giants/
+    mv planets/saturn.jpeg planets/real/gas-giants/
+    mv planets/uranus.jpeg planets/real/gas-giants/
+    mv planets/neptune.jpeg planets/real/gas-giants/
+    mv planets/mercury.jpeg planets/real/terrestrial/
+    mv planets/pluto.jpeg planets/real/dwarf-planets/
+    mv planets/arrakis.jpeg planets/fictional/
+    mv planets/cybertron.jpeg planets/fictional/
+    mv planets/coruscant.jpeg planets/fictional/
+    cp planets/real/terrestrial/earth.jpeg planets/inhabited/
+    cp planets/real/terrestrial/mars.jpeg planets/inhabited/
+    cp planets/fictional/arrakis.jpeg planets/inhabited/
+    cp planets/fictional/cybertron.jpeg planets/inhabited/
+    ls -R planets/
+    rm -rf planets/real/dwarf-planets/
+    find planets/
+    history
+```
+# ⚠️ Vérifications si unzip ne fonctionne pas 
 1. **Le fichier `planets.zip` existe-t-il ?**
    Vérifiez si le fichier a bien été téléchargé :
    ```bash
@@ -75,133 +260,3 @@ Si le problème persiste, téléchargez l'archive directement depuis votre navig
    cd ~/quests/shell
    unzip planets.zip
    ```
----
-
-# 💪 Challenge : Organisation des planètes avec le terminal
-
-Ce guide vous accompagnera pas à pas pour réussir le challenge en utilisant uniquement le terminal.
-
----
-
-## 🛠️ Prérequis : Installer les outils nécessaires
-
-Vous aurez besoin de deux outils en ligne de commande :
-- **curl** : pour télécharger un fichier.
-- **unzip** : pour décompresser une archive `.zip`.
-
-### Installation de curl et unzip
-
-#### Sous Linux
-Exécutez cette commande pour installer curl et unzip :
-```bash
-sudo apt-get install -y curl unzip
-```
-
----
-
-## 📥 Étape 1 : Télécharger et décompresser le fichier planets.zip
-
-1. **Naviguez dans le répertoire cible** :
-   ```bash
-   mkdir -p ~/quests/shell && cd ~/quests/shell
-   ```
-
-2. **Téléchargez l'archive** :
-   ```bash
-   curl --ssl-no-revoke -L -o planets.zip "https://github.com/WildCodeSchool/quests-resources/blob/master/terminal/planets.zip?raw=true"
-   ```
-
-3. **Décompressez l'archive** :
-   ```bash
-   unzip planets.zip
-   ```
-
----
-
-## 🌌 Étape 2 : Organisation des planètes
-
-1. **Créez les répertoires nécessaires** :
-
-   - Répertoires principaux :
-     ```bash
-     mkdir -p planets/real planets/fictional planets/inhabited
-     ```
-
-   - Sous-répertoires pour les planètes réelles :
-     ```bash
-     mkdir -p planets/real/terrestrial planets/real/gas-giants planets/real/dwarf-planets
-     ```
-
-2. **Classez les planètes** :
-
-   - **Déplacez les planètes réelles** :
-     ```bash
-     mv planets/earth.jpeg planets/real/terrestrial/
-     mv planets/mars.jpeg planets/real/terrestrial/
-     mv planets/venus.jpeg planets/real/terrestrial/
-     mv planets/jupiter.jpeg planets/real/gas-giants/
-     mv planets/saturn.jpeg planets/real/gas-giants/
-     mv planets/uranus.jpeg planets/real/gas-giants/
-     mv planets/neptune.jpeg planets/real/gas-giants/
-     mv planets/mercury.jpeg planets/real/terrestrial/
-     mv planets/pluto.jpeg planets/real/dwarf-planets/
-     ```
-
-   - **Déplacez les planètes fictives** :
-     ```bash
-     mv planets/arrakis.jpeg planets/fictional/
-     mv planets/cybertron.jpeg planets/fictional/
-     mv planets/coruscant.jpeg planets/fictional/
-     ```
-
-   - **Copiez les planètes habitées** :
-     ```bash
-     cp planets/earth.jpeg planets/inhabited/
-     cp planets/mars.jpeg planets/inhabited/
-     cp planets/arrakis.jpeg planets/inhabited/
-     cp planets/cybertron.jpeg planets/inhabited/
-     ```
-
-3. **Supprimez Pluton et son répertoire parent** :
-   ```bash
-   rm -rf planets/real/dwarf-planets/
-   ```
-
----
-
-## 🔍 Étape 3 : Vérification du résultat
-
-1. **Listez l’organisation des fichiers** :
-   ```bash
-   find planets/
-   ```
-
-2. **Affichez l’historique des commandes** :
-   ```bash
-   history
-   ```
-
----
-
-## 🧹 Étape 4 : Nettoyage
-
-Après validation, supprimez le répertoire utilisé :
-```bash
-rm -rf ~/quests/shell
-```
-
----
-
-## ✅ Critères de réussite
-
-- Les planètes sont correctement classées :
-  - **Planètes réelles** : dans `planets/real` et ses sous-dossiers.
-  - **Planètes fictives** : dans `planets/fictional`.
-  - **Planètes habitées** : copiées dans `planets/inhabited`.
-- Pluton et son répertoire parent sont supprimés.
-- Vous avez uniquement utilisé le terminal.
-
----
-
-🎉 **Bravo, vous avez terminé le challenge !**
-```
