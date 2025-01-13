@@ -1,8 +1,7 @@
 # 💪 Challenge : Organisation des planètes avec le terminal
 _j'ai utilisé **Git bash**_ <br>
-Quelques solutions si problème avec le fichier à dézipper. [bas de page](https://github.com/A2lyn33/Qu-te-Terminal-2/edit/main/README.md#%EF%B8%8F-v%C3%A9rifications-si-unzip-ne-fonctionne-pas)
 
-
+> _Quelques solutions en bas de page sur le fichier `planets.zip`_
 ---
 
 ## 🛠️ Prérequis : Installer les outils nécessaires
