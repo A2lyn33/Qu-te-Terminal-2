@@ -136,30 +136,30 @@ sudo apt-get install -y curl unzip
 
    - **Déplacez les planètes réelles** :
      ```bash
-     mv planets/earth.jpg planets/real/terrestrial/
-     mv planets/mars.jpg planets/real/terrestrial/
-     mv planets/venus.jpg planets/real/terrestrial/
-     mv planets/jupiter.jpg planets/real/gas-giants/
-     mv planets/saturn.jpg planets/real/gas-giants/
-     mv planets/uranus.jpg planets/real/gas-giants/
-     mv planets/neptune.jpg planets/real/gas-giants/
-     mv planets/mercury.jpg planets/real/terrestrial/
-     mv planets/pluto.jpg planets/real/dwarf-planets/
+     mv planets/earth.jpeg planets/real/terrestrial/
+     mv planets/mars.jpeg planets/real/terrestrial/
+     mv planets/venus.jpeg planets/real/terrestrial/
+     mv planets/jupiter.jpeg planets/real/gas-giants/
+     mv planets/saturn.jpeg planets/real/gas-giants/
+     mv planets/uranus.jpeg planets/real/gas-giants/
+     mv planets/neptune.jpeg planets/real/gas-giants/
+     mv planets/mercury.jpeg planets/real/terrestrial/
+     mv planets/pluto.jpeg planets/real/dwarf-planets/
      ```
 
    - **Déplacez les planètes fictives** :
      ```bash
-     mv planets/tatooine.jpg planets/fictional/
-     mv planets/vulcan.jpg planets/fictional/
-     mv planets/pandora.jpg planets/fictional/
+     mv planets/arrakis.jpeg planets/fictional/
+     mv planets/cybertron.jpeg planets/fictional/
+     mv planets/coruscant.jpeg planets/fictional/
      ```
 
    - **Copiez les planètes habitées** :
      ```bash
-     cp planets/earth.jpg planets/inhabited/
-     cp planets/mars.jpg planets/inhabited/
-     cp planets/tatooine.jpg planets/inhabited/
-     cp planets/pandora.jpg planets/inhabited/
+     cp planets/earth.jpeg planets/inhabited/
+     cp planets/mars.jpeg planets/inhabited/
+     cp planets/tatooine.jpeg planets/inhabited/
+     cp planets/pandora.jpeg planets/inhabited/
      ```
 
 3. **Supprimez Pluton et son répertoire parent** :
